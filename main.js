@@ -8,12 +8,12 @@ const app = Vue.createApp({
     methods: {
         updateCart(id) {
             this.cart.push(id);
-            console.log(this.cart)
         },
         removeItem(id) {
             const index = this.cart.indexOf(id);
-            this.cart.splice(index, 1);
-            console.log(this.cart)
+            if(index >= 0) {
+                this.cart.splice(index, 1);
+            }
         }
     }
 })
