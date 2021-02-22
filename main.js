@@ -32,7 +32,11 @@ const app = Vue.createApp({
             return this.variants[this.selectedVariant].quantity;
         },
         sale() {
-            return this.brand + ' ' + this.product + ' is on sale'
+            if (this.onSale) {
+                return this.brand + ' ' + this.product + ' is on sale';
+            } else {
+                return '';
+            }
         }
     }
 })
